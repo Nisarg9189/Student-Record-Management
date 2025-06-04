@@ -251,6 +251,7 @@ public:
     }
 };
 Node* root = NULL;
+bool isBuild = false; // avoid every time build tree
 
 int main()
 {
@@ -275,8 +276,11 @@ int main()
             cin >> cgpa;
 
             Add a1(name, roll, cgpa);
-            a1.add();           // adds to global queue
-            root = buildBST(); // builds BST
+            a1.add(); // adds to global queue
+            if(!isBuild) {
+                root = buildBST(); // builds BST
+            }          
+            
         }
         else if (in == 2)
         {
@@ -305,7 +309,9 @@ int main()
             bool updated = updateNode(root, newRoll, oldRoll, newName, newCGPA);
             if (updated){
                 cout << "Student record updated successfully.\n";
-                root = buildBST();
+                if(!isBuild) {
+                    root = buildBST(); // builds BST
+                } 
             }
             else
                 cout << "Student with roll " << oldRoll << " not found.\n";
@@ -323,11 +329,16 @@ int main()
             del d1(r);
             d1.Del(root, r);
             d1.change(r);
-            root = buildBST();
+            if(!isBuild) {
+                root = buildBST(); // builds BST
+            } 
         }
         else if (in == 4)
         {   //print data
-            inorder(root);
+            if(!isBuild) {
+                root = buildBST(); // builds BST
+            }
+            inorder(root); 
         }
         else if (in == 5)
         {

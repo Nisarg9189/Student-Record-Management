@@ -3,7 +3,7 @@ A C++ command-line Student Management System that supports adding, updating, del
 
 # Student-Record-Management (C++ CLI Version)
 
-A console-based Student Management System written in **C++** that allows users to manage student data using core data structures like **queue**, **stack**, and **binary search tree (BST)**. This system supports persistent storage via file handling and undo functionality using stacks.
+A console-based Student-Record-Management written in **C++** that allows users to manage student data using core data structures like **queue**, **stack**, and **binary search tree (BST)**. This system supports persistent storage via file handling and undo functionality using stacks.
 
 ---
 
